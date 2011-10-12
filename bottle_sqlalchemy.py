@@ -77,6 +77,7 @@ except ImportError:
 class SQLAlchemyPlugin(object):
 
     name = 'sqlalchemy'
+    api = 2
 
     def __init__(self, engine, metadata=None,
                  keyword='db', commit=True, create=False):
@@ -105,15 +106,15 @@ class SQLAlchemyPlugin(object):
         if self.create and not self.metadata:
             raise PluginError('Define metadata value to create database.')
 
-    def apply(self, callback, context):
+    def apply(self, callback, route):
         import inspect
 
-        config = context['config'].get('sqlalchemy', {})
+        config = route.config.get('sqlalchemy', {})
         keyword = config.get('keyword', self.keyword)
         create = config.get('create', self.create)
         commit = config.get('commit', self.commit)
 
-        args = inspect.getargspec(context['callback'])[0]
+        args = inspect.getargspec(route.callback)[0]
         if keyword not in args:
             return callback
 
