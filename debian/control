@@ -1,0 +1,17 @@
+Source: python-bottle-sqlalchemy
+Section: python
+Priority: optional
+Maintainer: Frederic Junod <frederic.junod@camptocamp.com>
+Build-Depends: debhelper (>= 8.0.0)
+Build-Depends-Indep: python-all (>= 2.6.6-3~)
+Standards-Version: 3.9.3
+Homepage: https://github.com/iurisilvio/bottle-sqlalchemy
+X-Python-Version: >= 2.5
+
+Package: python-bottle-sqlalchemy
+Architecture: all
+Depends: ${misc:Depends}, python-bottle (>= 0.9), python-sqlalchemy, ${python:Depends}
+Description: Bottle SQLAlchemy plugin
+ This bottle-sqlalchemy plugin integrates SQLAlchemy with your
+ Bottle application. It injects a SQLAlchemy session in your route
+ and handle the session cycle.

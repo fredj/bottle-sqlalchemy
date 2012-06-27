@@ -1,0 +1,5 @@
+python-bottle-sqlalchemy (0.3-1) UNRELEASED; urgency=low
+
+  * Initial release.
+
+ -- Frederic Junod <frederic.junod@camptocamp.com>  Wed, 27 Jun 2012 10:53:28 +0200
